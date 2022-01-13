@@ -1,7 +1,12 @@
 const SANITY_URL =
   'https://uy67ioxk.api.sanity.io/v1/graphql/production/default';
 
-export async function fetchSanityContent({ query, variables = {} }) {
+type Props = {
+  query: string;
+  variables?: { [key: string]: any };
+};
+
+export async function fetchSanityContent({ query, variables = {} }: Props) {
   const { data } = await fetch(SANITY_URL, {
     method: 'POST',
     headers: {

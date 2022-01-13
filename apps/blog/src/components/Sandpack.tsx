@@ -1,9 +1,11 @@
 import { Sandpack as RawSandpack } from '@codesandbox/sandpack-react';
 import '@codesandbox/sandpack-react/dist/index.css';
 
-export default function Sandpack(props) {
+type Props = React.ComponentProps<typeof RawSandpack>;
+
+export default function Sandpack(props: Props) {
   return (
-    <div style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: 800 }}>
+    <div>
       <RawSandpack {...props} />
     </div>
   );
