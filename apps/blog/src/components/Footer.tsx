@@ -6,12 +6,12 @@ const navigation = {
     { name: 'Twitter', href: 'https://twitter.com/VittoLewerissa' },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/vittolewerissa/' },
   ],
-  support: [
+  navigation: [
     { name: 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },
     { name: 'Work', href: '/work' },
   ],
-  contact: [{ name: 'Email', href: '#' }],
+  contact: [{ name: 'Email', href: 'mailto:rvlewerissa@gmail.com' }],
   social: [
     {
       name: 'LinkedIn',
@@ -57,55 +57,57 @@ export default function Footer() {
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
-      <div className='max-w-screen-md mx-auto py-12 px-6 lg:py-16 lg:px-8'>
-        <div className='md:grid md:grid-cols-3 md:gap-8'>
-          <div>
-            <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-              Social Media
-            </h3>
-            <ul role='list' className='mt-4 space-y-4'>
-              {navigation['Social Media'].map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} passHref>
-                    <span className='text-base text-gray-300 hover:text-white hover:cursor-pointer'>
-                      {item.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className='mt-12 md:mt-0'>
-            <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-              Navigation
-            </h3>
-            <ul role='list' className='mt-4 space-y-4'>
-              {navigation.support.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} passHref>
-                    <span className='text-base text-gray-300 hover:text-white hover:cursor-pointer'>
-                      {item.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className='mt-12 md:mt-0'>
-            <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-              Contact
-            </h3>
-            <ul role='list' className='mt-4 space-y-4'>
-              {navigation.contact.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} passHref>
-                    <span className='text-base text-gray-300 hover:text-white hover:cursor-pointer'>
-                      {item.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      <div className='py-12 px-6 lg:py-16 lg:px-8'>
+        <div className='max-w-screen-md mx-auto'>
+          <div className='sm:grid sm:grid-cols-3 sm:gap-8 justify-items-center'>
+            <div>
+              <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
+                Social Media
+              </h3>
+              <ul role='list' className='mt-4 space-y-4'>
+                {navigation['Social Media'].map((item) => (
+                  <li key={item.name}>
+                    <a href={item.href}>
+                      <span className='text-base text-gray-300 hover:text-white hover:cursor-pointer'>
+                        {item.name}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className='mt-12 sm:mt-0'>
+              <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
+                Navigation
+              </h3>
+              <ul role='list' className='mt-4 space-y-4'>
+                {navigation.navigation.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} passHref>
+                      <a className='text-base text-gray-300 hover:text-white hover:cursor-pointer'>
+                        {item.name}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className='mt-12 sm:mt-0'>
+              <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
+                Contact
+              </h3>
+              <ul role='list' className='mt-4 space-y-4'>
+                {navigation.contact.map((item) => (
+                  <li key={item.name}>
+                    <a href={item.href}>
+                      <span className='text-base text-gray-300 hover:text-white hover:cursor-pointer'>
+                        {item.name}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

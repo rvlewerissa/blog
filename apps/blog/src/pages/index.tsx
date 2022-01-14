@@ -3,8 +3,10 @@ import Head from 'next/head';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import LatestPost from '../components/LatestPost';
+import ContactMe from '../components/ContactMe';
 
-const Home: NextPage = (props) => {
+const Home: NextPage = () => {
   return (
     <div className='bg-gray-900 min-h-screen'>
       <Head>
@@ -13,6 +15,8 @@ const Home: NextPage = (props) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      <LatestPost />
+      <ContactMe />
       <Footer />
     </div>
   );
