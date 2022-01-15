@@ -118,7 +118,7 @@ function LatestPost() {
           {posts.map((post) => (
             <div
               key={post.title}
-              className='transition duration-300 h-64 bg-gray-700 border-gray-700 border-2 rounded-lg p-6 hover:border-sky-400 hover:shadow-2xl overflow-hidden flex flex-col sm:hover:scale-105 cursor-pointer'
+              className='transition duration-300 bg-gray-700 border-gray-700 border-2 rounded-lg p-6 hover:border-sky-400 hover:shadow-2xl overflow-hidden flex flex-col sm:hover:scale-105 cursor-pointer'
             >
               <p className='text-sm text-gray-400'>
                 <time dateTime={post.datetime}>{post.date}</time>
