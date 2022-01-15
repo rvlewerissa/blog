@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
@@ -7,25 +8,30 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
   { name: 'Work', href: '/work' },
-  { name: 'Contact me', href: '#contact-me' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Contact me', href: '/#contact-me' },
 ];
 
 export default function Navigation() {
+  useEffect(() => {
+    console.log('mounted');
+  }, []);
+
   return (
     <Popover>
-      <div className='max-w-7xl mx-auto px-6 sm:px-6'>
+      <div className='pt-8 max-w-7xl mx-auto px-6 sm:px-6'>
         <nav
-          className='relative flex items-center justify-between sm:h-10 md:justify-center'
+          className='relative flex items-center justify-between sm:h-10 lg:justify-center relative max-w-lg mx-auto lg:max-w-5xl'
           aria-label='Global'
         >
-          <div className='flex items-center flex-1 md:absolute md:inset-y-0 md:left-0'>
-            <div className='flex items-center justify-between w-full md:w-auto'>
+          <div className='flex items-center flex-1 lg:absolute lg:inset-y-0 lg:left-0'>
+            <div className='flex items-center justify-between w-full lg:w-auto'>
               <Link href='/' passHref>
                 <a className='tracking-wider uppercase font-bold text-sm lg:text-lg text-white'>
                   Vitto Lewerissa
                 </a>
               </Link>
-              <div className='-mr-2 flex items-center md:hidden'>
+              <div className='-mr-2 flex items-center lg:hidden'>
                 <Popover.Button className='bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
                   <span className='sr-only'>Open main menu</span>
                   <MenuIcon className='h-6 w-6' aria-hidden='true' />
@@ -33,10 +39,10 @@ export default function Navigation() {
               </div>
             </div>
           </div>
-          <div className='hidden md:flex md:space-x-12'>
+          <div className='hidden lg:flex lg:space-x-12'>
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <a className='font-bold text-md text-white hover:text-gray-300'>
+                <a className='font-medium text-md text-white hover:text-gray-300'>
                   {item.name}
                 </a>
               </Link>
@@ -63,7 +69,7 @@ function MobileNavigation() {
     >
       <Popover.Panel
         focus
-        className='absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'
+        className='absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden'
       >
         <div className='rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden'>
           <div className='px-5 pt-4 flex items-center justify-between'>

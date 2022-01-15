@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import LatestPost from '../components/LatestPost';
-import ContactMe from '../components/ContactMe';
+import Header from '../components/LandingPage/Header';
+import Footer from '../components/LandingPage/Footer';
+import LatestPost from '../components/LandingPage/LatestPost';
+import ContactMe from '../components/LandingPage/ContactMe';
+import FeaturedWork from '../components/LandingPage/FeaturedWork';
+import WorkshopAndEvents from '../components/LandingPage/WorkshopAndEvents';
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +18,8 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <LatestPost />
+      <FeaturedWork />
+      <WorkshopAndEvents />
       <ContactMe />
       <Footer />
     </div>
