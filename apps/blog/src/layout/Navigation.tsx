@@ -13,10 +13,6 @@ const navigation = [
 ];
 
 export default function Navigation() {
-  useEffect(() => {
-    console.log('mounted');
-  }, []);
-
   return (
     <Popover>
       <div className='pt-8 max-w-7xl mx-auto px-6 sm:px-6'>

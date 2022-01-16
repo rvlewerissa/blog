@@ -1,5 +1,58 @@
-const SANITY_URL =
-  'https://uy67ioxk.api.sanity.io/v1/graphql/production/default';
+const SANITY_URL = String(process.env.SANITY_URL);
+
+export const GET_POST = `
+  query PageBySlug($slug: String!) {
+    allPage(where: { slug: { current: { eq: $slug } } }) {
+      title
+      content
+      _createdAt
+      _updatedAt
+    }
+  }
+  `;
+
+export const GET_ALL_POSTS_BY_SLUG = `
+  query AllPostsBySlug {
+    allPage {
+      slug {
+        current
+      }
+    }
+  }
+  `;
+
+export const GET_ALL_POSTS = `
+  query AllPosts {
+    allPage(sort: [{
+      _createdAt: ASC
+    }]) {
+      _id
+      title
+      slug {
+        current
+      }
+      description
+      _createdAt
+      _updatedAt
+    }
+  }
+`;
+
+export const GET_LATEST_POSTS = `
+  query LatestPosts {
+    allPage(sort: [{
+      _createdAt: ASC
+    }], limit:4) {
+      _id
+      title
+      slug {
+        current
+      }
+      description
+      _createdAt
+    }
+  }
+`;
 
 type Props = {
   query: string;
