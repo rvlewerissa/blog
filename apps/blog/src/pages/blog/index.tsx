@@ -15,7 +15,18 @@ export async function getStaticProps() {
   };
 }
 
-export default function LatestPost({ posts }) {
+type Props = {
+  posts: Array<{
+    title: string;
+    slug: {
+      current: string;
+    };
+    _createdAt: string;
+    description: string;
+  }>;
+};
+
+export default function LatestPost({ posts }: Props) {
   return (
     <div className='pt-0 pb-4 px-4 sm:px-6 lg:pt-0 lg:pb-20 lg:px-8'>
       <div className='max-w-lg mx-auto lg:max-w-5xl py-12'>
