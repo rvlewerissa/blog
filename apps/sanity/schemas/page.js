@@ -20,6 +20,12 @@ export default {
       },
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+    },
+    {
       name: 'content',
       title: 'Content',
       type: 'markdown',
