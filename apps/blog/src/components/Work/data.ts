@@ -164,3 +164,33 @@ export const KodefoxProjectsWithoutImage = [
     responsibilities: ['Build backend', 'Build frontend'],
   },
 ];
+
+export const OtherProjectsWithoutImage = [
+  {
+    name: 'Phantom Network',
+    href: 'phantom.sh',
+    date: { dateFrom: 'Apr 2022', dateTo: 'Oct 2022' },
+    description: `PXN builds out a network of utilities that will let you thrive within the web3 environment, unified into a single platform. This includes a web- based chat app, grey market, job board, stacking, and more.`,
+    technologyUsed: [
+      'Preact',
+      'Next.js',
+      'React Web3',
+      'WebSocket',
+      'TailwindCSS',
+    ],
+    responsibilities: [
+      'Help maintain and launch alpha and beta versions of the app.',
+      'Help build the chat system, inbox system, and grey market.',
+    ],
+  },
+  {
+    name: 'Tiptip',
+    href: 'tiptip.co',
+    date: { dateFrom: 'Jul 2018', dateTo: 'Dec 2018' },
+    description: `TipTip is the platform of choice for content creators to engage their audience and monetize their interactions. As the creator economy grows across Southeast Asia, TipTip aims to accelerate creators’ income-earning opportunities by introducing innovative ways for creators to engage directly with their supporters through interactive video sessions. The company also provides native monetization features, such as on-platform tipping, as well as local KYC & payment integration to help creators earn more income.`,
+    technologyUsed: ['Next.js', 'Material UI', 'Styled Component'],
+    responsibilities: [
+      'Maintain and build features related to the content pod',
+    ],
+  },
+];

@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: 'Procost',
-    href: '/work#Procost',
+    href: '/work#ProCost',
     category: { name: 'Built' },
     description:
       'Procost is a budget management software for construction companies. I was responsible for building the frontend side of the application.',

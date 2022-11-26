@@ -6,6 +6,7 @@ import {
   GDISProjects,
   ProjectWithoutImage,
   ProjectWithImage,
+  OtherProjectsWithoutImage,
 } from '../components/Work/data';
 
 export default function Projects() {
@@ -16,10 +17,10 @@ export default function Projects() {
           Work
         </h1>
         <p className='text-gray-200 mt-3 md:mt-5 font-medium text-md md:text-lg'>
-          Here are all my work in the past. Most of my work involves building
-          app from the ground up (including MVPs and POCs), but never to the
-          point where it scales to millions of users, this is because I worked
-          mostly with software agencies.
+          Here are all my work in the past. My work consists of building apps
+          for startups to corporates, B2B and B2C with little to millions of
+          user base. I have experience in building POCs, MVPs, and maintain
+          legacy codes.
         </p>
         <div>
           <div className='mx-auto py-16 sm:py-16 lg:max-w-7xl space-y-16'>
@@ -64,6 +65,26 @@ export default function Projects() {
             {GDISProjects.map((project, i) => (
               <ProjectWithImage project={project} key={i} />
             ))}
+
+            <div className='relative'>
+              <div
+                className='absolute inset-0 flex items-center'
+                aria-hidden='true'
+              >
+                <div className='w-full border-t border-gray-500' />
+              </div>
+              <div className='relative flex justify-center'>
+                <span className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-stone-200 text-black'>
+                  Other projects
+                </span>
+              </div>
+            </div>
+
+            <div className='lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10'>
+              {OtherProjectsWithoutImage.map((project, i) => (
+                <OtherProjects project={project} key={i} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -164,6 +185,52 @@ function ProjectWithImage({ project }: { project: ProjectWithImage }) {
 }
 
 function ProjectWithoutImage({ project }: { project: ProjectWithoutImage }) {
+  return (
+    <div className='mt-14 sm:mt-16 lg:mt-0 bg-gray-700 p-6 rounded-lg'>
+      <div className='flex flex-col-reverse'>
+        <div>
+          <h1 className='text-2xl font-extrabold tracking-tight text-white sm:text-3xl'>
+            {project.name}
+          </h1>
+
+          <h2 id='information-heading' className='sr-only'>
+            Project information
+          </h2>
+          <p className='text-sm text-gray-400 mt-2'>
+            (<time>{project.date.dateFrom}</time> -{' '}
+            <time>{project.date.dateTo}</time>)
+          </p>
+        </div>
+      </div>
+
+      <p className='text-gray-300 mt-6'>{project.description}</p>
+
+      <div className='pt-8'>
+        <h3 className='text-lg font-bold text-white'>Responsibility</h3>
+        <div className='mt-4 text-gray-300'>
+          <ul role='list'>
+            {project.responsibilities.map((responsibility, i) => (
+              <li key={i}>- {responsibility}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className='mt-4 pt-4'>
+        <h3 className='text-lg font-medboldium text-white'>Technology Used</h3>
+        <div className='mt-4 text-gray-300'>
+          <ul role='list'>
+            {project.technologyUsed.map((technologyUsed, i) => (
+              <li key={i}>- {technologyUsed}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function OtherProjects({ project }: { project: ProjectWithoutImage }) {
   return (
     <div className='mt-14 sm:mt-16 lg:mt-0 bg-gray-700 p-6 rounded-lg'>
       <div className='flex flex-col-reverse'>

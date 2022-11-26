@@ -23,19 +23,42 @@ export default function Header() {
                 I try to make the world better by making quality software.
               </h2>
               <p className='text-gray-200 mt-3 md:mt-5 font-light text-md md:text-xl slide-in-bottom-2'>
-                Previously worked at{' '}
+                Currently working at{' '}
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  href='https://tiptip.co/'
+                  className='font-bold text-sky-400'
+                >
+                  TipTip
+                </a>{' '}
+                to build a one-stop platform for content-creators.
+              </p>
+              <p className='text-gray-200 mt-3 md:mt-5 font-light text-md md:text-xl slide-in-bottom-2'>
+                Previously at{' '}
                 <a
                   target='_blank'
                   rel='noreferrer'
                   href='https://kodefox.com/'
-                  className='font-bold text-sky-500'
+                  className='font-medium text-sky-600'
                 >
-                  Kodefox{' '}
+                  Kodefox
                 </a>
-                for a few years.
-                <br />
-                Now I help build software at a new startup called{' '}
-                <span className='font-bold text-sky-500'>GDIS</span>.
+                ,{' '}
+                <a
+                  href='https://phantom.sh'
+                  className='font-medium text-sky-600'
+                >
+                  Phantom Network
+                </a>
+                , and{' '}
+                <a
+                  href='https://id.linkedin.com/company/gdis-inovasi-indonesia'
+                  className='font-medium text-sky-600'
+                >
+                  GDIS
+                </a>
+                .
               </p>
             </div>
 
