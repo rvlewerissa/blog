@@ -27,7 +27,7 @@ export default function Header() {
                 <a
                   target='_blank'
                   rel='noreferrer'
-                  href='https://tiptip.co/'
+                  href='https://tiptip.id/'
                   className='font-bold text-sky-400'
                 >
                   TipTip
@@ -46,6 +46,8 @@ export default function Header() {
                 </a>
                 ,{' '}
                 <a
+                  target='_blank'
+                  rel='noreferrer'
                   href='https://phantom.sh'
                   className='font-medium text-sky-600'
                 >

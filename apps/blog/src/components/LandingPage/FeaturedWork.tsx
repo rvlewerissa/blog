@@ -2,37 +2,48 @@ import Link from 'next/link';
 
 const projects = [
   {
+    title: 'TipTip',
+    href: '/work#TipTip',
+    category: { name: 'Develop' },
+    description: `TipTip is an all-rounded entertainment platform with a comprehensive array of features that facilitate events and gathering activities.`,
+    imageUrl: '/tiptip-landing-page.png',
+    company: {
+      name: 'Build at TipTip',
+      imageUrl: '/logobw.svg',
+    },
+  },
+  {
     title: 'Vospay',
     href: '/work#Vospay',
-    category: { name: 'Built' },
+    category: { name: 'Develop' },
     description: `Vospay is bridging multifinance customers with Indonesia's e-commerce platforms. I was responsible for building the dashboard, account registration & activation interface.`,
     imageUrl: '/vospay-dashboard.png',
     company: {
-      name: 'Built at Kodefox',
+      name: 'Build at Kodefox',
       imageUrl: '/kodefox-logo.png',
     },
   },
   {
     title: 'Marketwurks',
     href: '/work#Marketwurks',
-    category: { name: 'Maintained' },
+    category: { name: 'Maintain' },
     description:
       'Marketwurks is an app that allows you to easily and affordably manage your market. I help maintain the application by fixing bugs and build new features.',
     imageUrl: '/marketwurks-dashboard.png',
     company: {
-      name: 'Built at Kodefox',
+      name: 'Build at Kodefox',
       imageUrl: '/kodefox-logo.png',
     },
   },
   {
     title: 'Procost',
     href: '/work#ProCost',
-    category: { name: 'Built' },
+    category: { name: 'Build' },
     description:
       'Procost is a budget management software for construction companies. I was responsible for building the frontend side of the application.',
     imageUrl: '/procost-dashboard.png',
     company: {
-      name: 'Built at GDIS',
+      name: 'Build at GDIS',
       imageUrl: '/gdis-logo.png',
     },
   },
@@ -80,23 +91,25 @@ export default function RecentWork() {
                       </p>
                     </a>
                   </div>
-                  <div className='mt-6 flex items-center'>
-                    <div className='flex-shrink-0'>
-                      <div>
-                        <span className='sr-only'>{post.company.name}</span>
-                        <img
-                          className='h-8 w-8'
-                          src={post.company.imageUrl}
-                          alt=''
-                        />
+                  {post.company && (
+                    <div className='mt-6 flex items-center'>
+                      <div className='flex-shrink-0'>
+                        <div>
+                          <span className='sr-only'>{post.company.name}</span>
+                          <img
+                            className='h-8 w-8'
+                            src={post.company.imageUrl}
+                            alt=''
+                          />
+                        </div>
+                      </div>
+                      <div className='ml-2'>
+                        <p className='text-sm font-regular text-gray-300'>
+                          <span>{post.company.name}</span>
+                        </p>
                       </div>
                     </div>
-                    <div className='ml-2'>
-                      <p className='text-sm font-regular text-gray-300'>
-                        <span>{post.company.name}</span>
-                      </p>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
             ))}

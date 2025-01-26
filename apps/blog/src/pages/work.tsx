@@ -4,8 +4,8 @@ import {
   KodefoxProjectsWithoutImage,
   KodefoxProjects,
   GDISProjects,
-  ProjectWithoutImage,
-  ProjectWithImage,
+  ProjectWithoutImage as ProjectWithoutImageType,
+  ProjectWithImage as ProjectWithImageType,
   OtherProjectsWithoutImage,
 } from '../components/Work/data';
 
@@ -22,6 +22,27 @@ export default function Projects() {
           user base. I have experience in building POCs, MVPs, and maintain
           legacy codes.
         </p>
+
+        {/* <div className='relative'>
+          <div
+            className='absolute inset-0 flex items-center'
+            aria-hidden='true'
+          >
+            <div className='w-full border-t border-gray-500' />
+          </div>
+          <div className='relative flex justify-center'>
+            <span className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-stone-200 text-black'>
+              Other projects
+            </span>
+          </div>
+        </div> */}
+
+        <div className='lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10 mt-12'>
+          {OtherProjectsWithoutImage.map((project, i) => (
+            <OtherProjects project={project} key={i} />
+          ))}
+        </div>
+
         <div>
           <div className='mx-auto py-16 sm:py-16 lg:max-w-7xl space-y-16'>
             <div className='relative'>
@@ -65,26 +86,6 @@ export default function Projects() {
             {GDISProjects.map((project, i) => (
               <ProjectWithImage project={project} key={i} />
             ))}
-
-            <div className='relative'>
-              <div
-                className='absolute inset-0 flex items-center'
-                aria-hidden='true'
-              >
-                <div className='w-full border-t border-gray-500' />
-              </div>
-              <div className='relative flex justify-center'>
-                <span className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-stone-200 text-black'>
-                  Other projects
-                </span>
-              </div>
-            </div>
-
-            <div className='lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-10'>
-              {OtherProjectsWithoutImage.map((project, i) => (
-                <OtherProjects project={project} key={i} />
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -92,7 +93,7 @@ export default function Projects() {
   );
 }
 
-function ProjectWithImage({ project }: { project: ProjectWithImage }) {
+function ProjectWithImage({ project }: { project: ProjectWithImageType }) {
   return (
     <div
       className='lg:grid lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16'
@@ -184,7 +185,11 @@ function ProjectWithImage({ project }: { project: ProjectWithImage }) {
   );
 }
 
-function ProjectWithoutImage({ project }: { project: ProjectWithoutImage }) {
+function ProjectWithoutImage({
+  project,
+}: {
+  project: ProjectWithoutImageType;
+}) {
   return (
     <div className='mt-14 sm:mt-16 lg:mt-0 bg-gray-700 p-6 rounded-lg'>
       <div className='flex flex-col-reverse'>
@@ -230,13 +235,15 @@ function ProjectWithoutImage({ project }: { project: ProjectWithoutImage }) {
   );
 }
 
-function OtherProjects({ project }: { project: ProjectWithoutImage }) {
+function OtherProjects({ project }: { project: ProjectWithoutImageType }) {
   return (
     <div className='mt-14 sm:mt-16 lg:mt-0 bg-gray-700 p-6 rounded-lg'>
       <div className='flex flex-col-reverse'>
         <div>
           <h1 className='text-2xl font-extrabold tracking-tight text-white sm:text-3xl'>
-            {project.name}
+            <a target='_blank' rel='noreferrer' href={`http://${project.href}`}>
+              {project.name}
+            </a>
           </h1>
 
           <h2 id='information-heading' className='sr-only'>

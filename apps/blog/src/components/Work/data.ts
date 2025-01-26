@@ -167,6 +167,26 @@ export const KodefoxProjectsWithoutImage = [
 
 export const OtherProjectsWithoutImage = [
   {
+    name: 'TipTip',
+    href: 'tiptip.id',
+    date: { dateFrom: 'Oct 2022', dateTo: 'Current' },
+    description: `TipTip is the platform of choice for content creators to engage their audience and monetize their interactions. As the creator economy grows across Southeast Asia, TipTip aims to accelerate creators’ income-earning opportunities by introducing innovative ways for creators to engage directly with their supporters through interactive video sessions. The company also provides native monetization features, such as on-platform tipping, as well as local KYC & payment integration to help creators earn more income.`,
+    technologyUsed: [
+      'Next.js',
+      'Material UI',
+      'Styled Component',
+      'Retool',
+      'AWS',
+    ],
+    responsibilities: [
+      'Maintain TipTip Web App',
+      'Maintain TipTip Content Hub',
+      'Initiate and maintain TipTip Web Organizer',
+      'Maintain TipTip Waiting Room',
+      'Maintain internal tooling using Retool',
+    ],
+  },
+  {
     name: 'Phantom Network',
     href: 'phantom.sh',
     date: { dateFrom: 'Apr 2022', dateTo: 'Oct 2022' },
@@ -179,18 +199,10 @@ export const OtherProjectsWithoutImage = [
       'TailwindCSS',
     ],
     responsibilities: [
-      'Help maintain and launch alpha and beta versions of the app.',
-      'Help build the chat system, inbox system, and grey market.',
-    ],
-  },
-  {
-    name: 'Tiptip',
-    href: 'tiptip.co',
-    date: { dateFrom: 'Jul 2018', dateTo: 'Dec 2018' },
-    description: `TipTip is the platform of choice for content creators to engage their audience and monetize their interactions. As the creator economy grows across Southeast Asia, TipTip aims to accelerate creators’ income-earning opportunities by introducing innovative ways for creators to engage directly with their supporters through interactive video sessions. The company also provides native monetization features, such as on-platform tipping, as well as local KYC & payment integration to help creators earn more income.`,
-    technologyUsed: ['Next.js', 'Material UI', 'Styled Component'],
-    responsibilities: [
-      'Maintain and build features related to the content pod',
+      'Maintain and launch alpha and beta version of the app',
+      'Build Discord-like chat system',
+      'Build inbox UI',
+      'Build market UI',
     ],
   },
 ];
