@@ -8,7 +8,7 @@ export default function WorkshopAndEvents() {
           </h2>
         </div>
         <div className='pt-8 grid gap-8 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-12'>
-          <div className='bg-gray-700 border-gray-700 border-2 rounded-lg p-6'>
+          <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 transition-all duration-300 hover:bg-gray-800/70 hover:border-gray-600/50'>
             <div className='w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden mb-6'>
               <img
                 src='/bptn-workshop.png'
@@ -20,14 +20,14 @@ export default function WorkshopAndEvents() {
               <h3 className='text-xl font-semibold text-white mb-3'>
                 React Workshop for BTPN & Jenius Team
               </h3>
-              <div className='flex flex-wrap gap-2 mb-4'>
+              <div className='flex flex-wrap gap-2 mb-3'>
                 <span className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'>
                   Full Week Workshop
                 </span>
-                <span className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'>
-                  Kodefox
-                </span>
               </div>
+              <p className='text-orange-400 text-xs font-medium mb-4'>
+                Activities at KodeFox
+              </p>
               <p className='text-gray-300 leading-relaxed flex-1'>
                 Together with 2 of my colleagues, I delivered an intensive full
                 week React workshop for the development teams at{' '}
@@ -54,7 +54,7 @@ export default function WorkshopAndEvents() {
               </p>
             </div>
           </div>
-          <div className='bg-gray-700 border-gray-700 border-2 rounded-lg p-6'>
+          <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 transition-all duration-300 hover:bg-gray-800/70 hover:border-gray-600/50'>
             <div className='w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden mb-6'>
               <img
                 src='/tech-in-asia-conference.png'
@@ -66,14 +66,14 @@ export default function WorkshopAndEvents() {
               <h3 className='text-xl font-semibold text-white mb-3'>
                 Tech in Asia Conference
               </h3>
-              <div className='flex flex-wrap gap-2 mb-4'>
+              <div className='flex flex-wrap gap-2 mb-3'>
                 <span className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'>
                   Conference
                 </span>
-                <span className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'>
-                  Kodefox
-                </span>
               </div>
+              <p className='text-orange-400 text-xs font-medium mb-4'>
+                Activities at KodeFox
+              </p>
               <p className='text-gray-300 leading-relaxed flex-1'>
                 Alongside my colleagues from KodeFox, I represented Zumi at the{' '}
                 <a
