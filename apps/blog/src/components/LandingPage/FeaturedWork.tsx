@@ -55,7 +55,7 @@ const workExperience = [
 
 export default function RecentWork() {
   return (
-    <div className='py-8 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
+    <div id='work' className='py-8 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
       <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
         <div>
           <h2 className='text-2xl tracking-tight font-extrabold text-white sm:text-3xl mb-8'>

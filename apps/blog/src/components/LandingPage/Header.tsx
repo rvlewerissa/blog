@@ -67,7 +67,7 @@ export default function Header() {
             </div>
 
             <div
-              className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-96 lg:h-96 relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-12 md:ml-12 md:mt-0 shrink-0 puff-in-center bg-gradient-to-r from-green-700 to-green-900 rounded-full'
+              className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-96 lg:h-96 relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-12 md:ml-12 md:mt-0 shrink-0 puff-in-center bg-gradient-to-r from-amber-500 to-orange-600 rounded-full'
               style={{
                 boxShadow:
                   'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
@@ -89,8 +89,8 @@ export default function Header() {
               {/* Open to Work Badge */}
               <div className='absolute -bottom-1 left-1/2 transform -translate-x-1/2 sm:-bottom-2 lg:-bottom-3'>
                 <div className='relative'>
-                  <div className='absolute inset-0 bg-green-800 rounded-full blur-sm opacity-75'></div>
-                  <div className='relative bg-green-800 text-white text-[8px] sm:text-[10px] lg:text-sm font-bold px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5 rounded-full shadow-lg'>
+                  <div className='absolute inset-0 bg-emerald-700 rounded-full blur-sm opacity-75'></div>
+                  <div className='relative bg-emerald-700 text-white text-[8px] sm:text-[10px] lg:text-sm font-bold px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5 rounded-full shadow-lg'>
                     <div className='flex items-center gap-0.5 sm:gap-1 lg:gap-1.5'>
                       <div className='w-0.5 h-0.5 sm:w-1 sm:h-1 lg:w-1.5 lg:h-1.5 bg-white/70 rounded-full animate-pulse'></div>
                       <span>Open to Work</span>
