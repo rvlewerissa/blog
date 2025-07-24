@@ -37,10 +37,10 @@ export default function ContactMe() {
       <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
         <div className='text-center mb-12'>
           <h2 className='text-2xl tracking-tight font-extrabold text-white sm:text-3xl mb-4'>
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className='text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto'>
-            I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology and development.
+            I&apos;m always open to discussing new opportunities, collaborations, or just having a conversation about technology and development.
           </p>
         </div>
 

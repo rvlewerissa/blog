@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const projects = [
   {
     name: 'Bootcampku',
@@ -245,10 +247,8 @@ export default function Projects() {
           </div>
           
           <div className='mt-12'>
-            <a
-              href='/projects'
-              className='inline-flex items-center px-4 py-2 bg-sky-900/20 text-sky-300 hover:bg-sky-800/30 hover:text-sky-200 transition-all duration-300 font-medium rounded-lg border border-sky-800/30 hover:border-sky-700/50'
-            >
+            <Link href='/projects'>
+              <span className='inline-flex items-center px-4 py-2 bg-sky-900/20 text-sky-300 hover:bg-sky-800/30 hover:text-sky-200 transition-all duration-300 font-medium rounded-lg border border-sky-800/30 hover:border-sky-700/50'>
               Explore All Projects
               <svg
                 className='ml-2 w-4 h-4'
@@ -263,7 +263,8 @@ export default function Projects() {
                   d='M13 7l5 5m0 0l-5 5m5-5H6'
                 />
               </svg>
-            </a>
+              </span>
+            </Link>
           </div>
         </div>
       </div>
