@@ -6,6 +6,7 @@ const workExperience = [
     title: 'Senior Front End Engineer',
     company: 'TipTip',
     href: 'https://www.tiptip.id/',
+    logo: '/tiptip-logo.png',
     bulletPoints: [
       'Developed and maintained 5 applications (user-facing and internal tools) using Next.js, TypeScript, and Retool.',
       'Shipped 10+ product-led features and 5 engineering initiatives, consistently meeting sprint deadlines 1-4 weeks.',
@@ -18,6 +19,7 @@ const workExperience = [
     title: 'Senior Front End Engineer',
     company: 'Phantom Network',
     href: 'https://www.phantom.sh/',
+    logo: '/pxn-logo.png',
     bulletPoints: [
       'Contributed to the successful launch of key features for the #1 NFT project on OpenSea, helping drive $70 million in secondary sales and securing the top global ranking within two weeks of onboarding.',
       'Developed a Discord-like chat MVP within, collaborating with an 8-member cross-functional team.',
@@ -30,6 +32,7 @@ const workExperience = [
     title: 'Front End Engineer',
     company: 'GDIS',
     href: 'https://www.linkedin.com/company/gdis-inovasi-indonesia/',
+    logo: '/gdis-logo.png',
     bulletPoints: [
       'Led a team of 4 developers, mentoring junior engineers while overseeing all front-end deliverables.',
       'Revamped the core product from scratch within, upgrading to the latest React & GraphQL, which reduced load times by 60% and cut maintenance overhead by 25%, enabling faster feature development.',
@@ -42,6 +45,7 @@ const workExperience = [
     title: 'Front End Engineer',
     company: 'KodeFox',
     href: 'https://kodefox.com/',
+    logo: '/kodefox-logo.png',
     bulletPoints: [
       'Delivered 4 client apps (2 web apps with React.js and 2 mobile apps with React Native).',
       'Refactored legacy app MarketWurks, upgrading it to ES6 latest React version, integrating Redux for state management.',
@@ -62,21 +66,53 @@ export default function RecentWork() {
             Work Experience
           </h2>
 
-          <div className='space-y-6'>
-            {workExperience.map((job, index) => (
-              <div 
-                key={job.company} 
-                className='group relative p-6 rounded-lg transition-all duration-300 hover:bg-gray-700/20 hover:shadow-md cursor-pointer'
-                onClick={() => window.open(job.href, '_blank', 'noopener,noreferrer')}
-              >
-                <div className='flex flex-col md:flex-row md:items-start gap-4 md:gap-8'>
-                  <div className='md:w-48 flex-shrink-0'>
-                    <p className='text-sm font-medium text-gray-400 uppercase tracking-wider'>
-                      {job.period}
-                    </p>
-                  </div>
+          <div className='relative'>
+            
+            <div className='space-y-6'>
+              {workExperience.map((job, index) => (
+                <div 
+                  key={job.company} 
+                  className='group relative p-6 rounded-lg transition-all duration-300 hover:bg-gray-700/20 hover:shadow-md cursor-pointer'
+                  onClick={() => window.open(job.href, '_blank', 'noopener,noreferrer')}
+                >
+                  {/* Vertical line segment with margin below company logo - hidden on hover */}
+                  <div className='absolute left-12 md:left-30 top-32 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 to-gray-600 opacity-50 group-hover:opacity-0 transition-opacity duration-300'></div>
+                  
+                  <div className='flex flex-col md:flex-row md:items-start gap-4 md:gap-8'>
+                    <div className='md:w-48 flex-shrink-0 relative'>
+                      <p className='text-sm font-medium text-gray-400 uppercase tracking-wider mb-3'>
+                        {job.period}
+                      </p>
+                      
+                      {/* Company logo */}
+                      <div className={`w-12 h-12 rounded-lg shadow-sm ${
+                        job.company === 'TipTip' || job.company === 'Phantom Network' 
+                          ? 'bg-transparent p-0' 
+                          : job.company === 'KodeFox'
+                            ? 'bg-white p-1'
+                            : 'bg-white p-2'
+                      }`}>
+                        <img 
+                          src={job.logo} 
+                          alt={`${job.company} logo`}
+                          className={`w-full h-full ${job.company === 'TipTip' || job.company === 'Phantom Network' ? 'object-cover rounded-lg' : 'object-contain'}`}
+                          onError={(e) => {
+                            // Fallback if logo doesn't exist
+                            const target = e.currentTarget;
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            target.style.display = 'none';
+                            if (fallback) {
+                              fallback.style.display = 'flex';
+                            }
+                          }}
+                        />
+                        <div className='w-full h-full bg-gray-600 rounded flex items-center justify-center text-white text-xs font-bold' style={{display: 'none'}}>
+                          {job.company.charAt(0)}
+                        </div>
+                      </div>
+                    </div>
 
-                  <div className='flex-1'>
+                    <div className='flex-1'>
                     <div className='mb-4'>
                       <h3 className='text-xl font-semibold text-white mb-1 group-hover:text-sky-400 transition-colors'>
                         {job.title}
@@ -133,9 +169,10 @@ export default function RecentWork() {
                       ))}
                     </div>
                   </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           
           <div className='mt-12'>

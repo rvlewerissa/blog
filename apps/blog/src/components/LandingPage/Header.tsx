@@ -26,44 +26,14 @@ export default function Header() {
               <p className='text-gray-200 mt-3 md:mt-5 text-md font-light md:text-xl slide-in-bottom-2'>
                 I have extensive experience working in agile environments,
                 developing scalable applications with technologies including
-                React.js, TypeScript, Next.js, and GraphQL.
+                React.js, TypeScript, GraphQL, and Node.js.
               </p>
-              <p className='text-gray-200 mt-3 md:mt-5 text-md font-light md:text-xl slide-in-bottom-2'>
-                I&apos;m passionate about owning the complete product journey
-                from concept to launch, creating meaningful impact through
-                well-built products, and maintaining clean architecture with
-                sustainable, maintainable code practices.
-              </p>
-              <p className='text-gray-200 mt-3 md:mt-5 text-md font-light md:text-xl slide-in-bottom-2'>
-                Previously worked at{' '}
-                <a
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://tiptip.id/'
-                  className='font-medium text-sky-600'
-                >
-                  TipTip
-                </a>
-                ,{' '}
-                <a
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://kodefox.com/'
-                  className='font-medium text-sky-600'
-                >
-                  KodeFox
-                </a>
-                , and{' '}
-                <a
-                  target='_blank'
-                  rel='noreferrer'
-                  href='https://phantom.sh'
-                  className='font-medium text-sky-600'
-                >
-                  Phantom Network
-                </a>
-                .
-              </p>
+              <div className='inline-flex items-center mt-3 md:mt-4 pl-3 pr-4 py-2 bg-gray-700/30 backdrop-blur-sm rounded-full border border-gray-600/30 slide-in-bottom-2'>
+                <span className='mr-2 text-lg'>📍</span>
+                <span className='text-gray-200 text-sm md:text-base font-medium'>
+                  Jakarta, Indonesia
+                </span>
+              </div>
             </div>
 
             <div
