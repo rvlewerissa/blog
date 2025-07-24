@@ -85,7 +85,7 @@ export default function Projects() {
                   key={index}
                   className='border-b border-gray-800 hover:bg-gray-900/30 transition-colors'
                 >
-                  <td className='py-6 pr-6 text-gray-400 text-sm'>
+                  <td className='py-6 pl-2 pr-6 text-gray-400 text-sm'>
                     {project.year}
                   </td>
                   <td className='py-6 px-6 text-white font-medium'>
