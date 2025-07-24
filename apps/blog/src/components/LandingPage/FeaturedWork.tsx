@@ -121,19 +121,6 @@ export default function RecentWork() {
                       </ul>
                     )}
 
-                    {job.links && (
-                      <div className='mb-4 flex flex-wrap gap-2'>
-                        {job.links.map((link, linkIndex) => (
-                          <a
-                            key={linkIndex}
-                            href={link.url}
-                            className='text-gray-400 hover:text-sky-400 transition-colors text-sm underline'
-                          >
-                            {link.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
 
                     <div className='flex flex-wrap gap-2'>
                       {job.technologies.map((tech, techIndex) => (
