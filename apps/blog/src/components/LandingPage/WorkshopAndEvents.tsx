@@ -16,7 +16,7 @@ export default function WorkshopAndEvents() {
                 className='w-full h-full object-center object-cover'
               />
             </div>
-            <div className='flex flex-col h-full'>
+            <div className='flex flex-col'>
               <h3 className='text-xl font-semibold text-white mb-3'>
                 React Workshop for BTPN & Jenius Team
               </h3>
@@ -62,7 +62,7 @@ export default function WorkshopAndEvents() {
                 className='w-full h-full object-center object-cover'
               />
             </div>
-            <div className='flex flex-col h-full'>
+            <div className='flex flex-col'>
               <h3 className='text-xl font-semibold text-white mb-3'>
                 Tech in Asia Conference
               </h3>
