@@ -5,8 +5,6 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
   { name: 'Work', href: '/work' },
   { name: 'Projects', href: '/projects' },
   { name: 'Contact me', href: '/#contact-me' },
@@ -17,7 +15,7 @@ export default function Navigation() {
     <Popover>
       <div className='pt-8 max-w-7xl mx-auto px-6 sm:px-6'>
         <nav
-          className='relative flex items-center justify-between sm:h-10 lg:justify-center relative max-w-lg mx-auto lg:max-w-5xl'
+          className='flex items-center justify-between sm:h-10 lg:justify-center relative max-w-lg mx-auto lg:max-w-5xl'
           aria-label='Global'
         >
           <div className='flex items-center flex-1 lg:absolute lg:inset-y-0 lg:left-0'>
