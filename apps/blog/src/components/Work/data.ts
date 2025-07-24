@@ -26,7 +26,7 @@ export const GDISProjects: Array<ProjectWithImage> = [
     href: '',
     date: { dateFrom: 'Dec 2021', dateTo: 'Present' },
     description: `A ticketing software MVP for PT. TPK Koja (a container terminal company) to manage daily operations of container handling.`,
-    technologyUsed: ['React (with Next.js)', 'TailwindCSS'],
+    technologyUsed: ['React', 'TailwindCSS'],
     responsibilities: ['Single handedly build the MVP in less than a month.'],
     image: {
       src: '/prologs-mockup.png',
@@ -167,30 +167,35 @@ export const KodefoxProjectsWithoutImage = [
 
 export const OtherProjectsWithoutImage = [
   {
+    name: 'Bootcampku',
+    href: 'https://bootcampku.com',
+    date: { dateFrom: 'Jan 2025', dateTo: 'Present' },
+    description: `An online learning platform focused on Frontend Engineering and Web Development. Features short, dense, and informative content with live coding experiences directly in the browser, covering React, Git, GraphQL, and modern web technologies for all skill levels.`,
+    technologyUsed: ['React', 'Next.js', 'TypeScript', 'TailwindCSS'],
+    responsibilities: [
+      'Single-handedly built the entire learning platform',
+      'Developed course management system and interactive coding challenges',
+    ],
+  },
+  {
+    name: 'TipTip',
+    href: 'tiptip.id',
+    date: { dateFrom: 'Oct 2022', dateTo: 'Apr 2025' },
+    description: `TipTip is the platform of choice for content creators to engage their audience and monetize their interactions. As the creator economy grows across Southeast Asia, TipTip aims to accelerate creators' income-earning opportunities by introducing innovative ways for creators to engage directly with their supporters through interactive video sessions. The company also provides native monetization features, such as on-platform tipping, as well as local KYC & payment integration to help creators earn more income.`,
+    technologyUsed: ['Next.js', 'Material UI', 'Styled Component'],
+    responsibilities: [
+      'Maintain and build features related to the content pod',
+    ],
+  },
+  {
     name: 'Phantom Network',
     href: 'phantom.sh',
     date: { dateFrom: 'Apr 2022', dateTo: 'Oct 2022' },
     description: `PXN builds out a network of utilities that will let you thrive within the web3 environment, unified into a single platform. This includes a web- based chat app, grey market, job board, stacking, and more.`,
-    technologyUsed: [
-      'Preact',
-      'Next.js',
-      'React Web3',
-      'WebSocket',
-      'TailwindCSS',
-    ],
+    technologyUsed: ['Preact', 'Next.js', 'WebSocket', 'TailwindCSS'],
     responsibilities: [
       'Help maintain and launch alpha and beta versions of the app.',
       'Help build the chat system, inbox system, and grey market.',
-    ],
-  },
-  {
-    name: 'Tiptip',
-    href: 'tiptip.co',
-    date: { dateFrom: 'Jul 2018', dateTo: 'Dec 2018' },
-    description: `TipTip is the platform of choice for content creators to engage their audience and monetize their interactions. As the creator economy grows across Southeast Asia, TipTip aims to accelerate creators’ income-earning opportunities by introducing innovative ways for creators to engage directly with their supporters through interactive video sessions. The company also provides native monetization features, such as on-platform tipping, as well as local KYC & payment integration to help creators earn more income.`,
-    technologyUsed: ['Next.js', 'Material UI', 'Styled Component'],
-    responsibilities: [
-      'Maintain and build features related to the content pod',
     ],
   },
 ];
