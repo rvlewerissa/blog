@@ -3,6 +3,7 @@ import Header from '../components/LandingPage/Header';
 import ContactMe from '../components/LandingPage/ContactMe';
 import FeaturedWork from '../components/LandingPage/FeaturedWork';
 import WorkshopAndEvents from '../components/LandingPage/WorkshopAndEvents';
+import Footer from '../layout/Footer';
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
       <Header />
       <FeaturedWork />
       <WorkshopAndEvents />
-      <ContactMe />
+      {/* <ContactMe /> */}
+      <Footer />
     </div>
   );
 };
