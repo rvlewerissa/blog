@@ -53,7 +53,16 @@ const workExperience = [
       'Led a one-week training/workshop for BTPN Bank and Jenius teams.',
       "Mentored developers through Kodefox's workshops at Traveloka, Skystar Ventures, and other organizations.",
     ],
-    technologies: ['React.js', 'React Native', 'Node.js', 'GraphQL', 'REST API', 'Redux', 'JavaScript', 'Jest'],
+    technologies: [
+      'React.js',
+      'React Native',
+      'Node.js',
+      'GraphQL',
+      'REST API',
+      'Redux',
+      'JavaScript',
+      'Jest',
+    ],
   },
 ];
 
@@ -67,114 +76,120 @@ export default function RecentWork() {
           </h2>
 
           <div className='relative'>
-            
             <div className='space-y-6'>
-              {workExperience.map((job, index) => (
-                <div 
-                  key={job.company} 
+              {workExperience.map((job) => (
+                <div
+                  key={job.company}
                   className='group relative p-6 rounded-lg transition-all duration-300 hover:bg-gray-700/20 hover:shadow-md cursor-pointer'
-                  onClick={() => window.open(job.href, '_blank', 'noopener,noreferrer')}
+                  onClick={() =>
+                    window.open(job.href, '_blank', 'noopener,noreferrer')
+                  }
                 >
                   {/* Vertical line segment with margin below company logo - hidden on hover */}
-                  <div className='absolute left-12 md:left-30 top-32 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 to-gray-600 opacity-50 group-hover:opacity-0 transition-opacity duration-300'></div>
-                  
-                  <div className='flex flex-col md:flex-row md:items-start gap-4 md:gap-8'>
-                    <div className='md:w-48 flex-shrink-0 relative'>
+                  <div className='absolute left-6 lg:left-12 top-32 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 to-gray-600 opacity-50 group-hover:opacity-0 transition-opacity duration-300'></div>
+
+                  <div className='flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8'>
+                    <div className='lg:w-48 flex-shrink-0 relative'>
                       <p className='text-sm font-medium text-gray-400 uppercase tracking-wider mb-3'>
                         {job.period}
                       </p>
-                      
+
                       {/* Company logo */}
-                      <div className={`w-12 h-12 rounded-lg shadow-sm ${
-                        job.company === 'TipTip' || job.company === 'Phantom Network' 
-                          ? 'bg-transparent p-0' 
-                          : job.company === 'KodeFox'
-                            ? 'bg-white p-1'
-                            : 'bg-white p-2'
-                      }`}>
-                        <img 
-                          src={job.logo} 
+                      <div
+                        className={`w-12 h-12 rounded-lg shadow-sm ${
+                          job.company === 'TipTip' ||
+                          job.company === 'Phantom Network'
+                            ? 'bg-transparent p-0'
+                            : job.company === 'KodeFox'
+                              ? 'bg-white p-1'
+                              : 'bg-white p-2'
+                        }`}
+                      >
+                        <img
+                          src={job.logo}
                           alt={`${job.company} logo`}
                           className={`w-full h-full ${job.company === 'TipTip' || job.company === 'Phantom Network' ? 'object-cover rounded-lg' : 'object-contain'}`}
                           onError={(e) => {
                             // Fallback if logo doesn't exist
                             const target = e.currentTarget;
-                            const fallback = target.nextElementSibling as HTMLElement;
+                            const fallback =
+                              target.nextElementSibling as HTMLElement;
                             target.style.display = 'none';
                             if (fallback) {
                               fallback.style.display = 'flex';
                             }
                           }}
                         />
-                        <div className='w-full h-full bg-gray-600 rounded flex items-center justify-center text-white text-xs font-bold' style={{display: 'none'}}>
+                        <div
+                          className='w-full h-full bg-gray-600 rounded flex items-center justify-center text-white text-xs font-bold'
+                          style={{ display: 'none' }}
+                        >
                           {job.company.charAt(0)}
                         </div>
                       </div>
                     </div>
 
-                    <div className='flex-1'>
-                    <div className='mb-4'>
-                      <h3 className='text-xl font-semibold text-white mb-1 group-hover:text-sky-400 transition-colors'>
-                        {job.title}
-                      </h3>
-                      <div className='flex items-center mb-2'>
-                        <Link href={job.href}>
-                          <a
-                            className='text-gray-300 hover:text-sky-400 group-hover:text-sky-400 transition-colors font-medium'
-                            target='_blank'
-                            rel='noopener noreferrer'
+                    <div className='flex-1 pl-8 lg:pl-0'>
+                      <div className='mb-4'>
+                        <h3 className='text-xl font-semibold text-white mb-1 group-hover:text-sky-400 transition-colors'>
+                          {job.title}
+                        </h3>
+                        <div className='flex items-center mb-2'>
+                          <Link href={job.href}>
+                            <a
+                              className='text-gray-300 hover:text-sky-400 group-hover:text-sky-400 transition-colors font-medium'
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              {job.company}
+                            </a>
+                          </Link>
+                          <svg
+                            className='ml-2 w-4 h-4 text-gray-400'
+                            fill='none'
+                            stroke='currentColor'
+                            viewBox='0 0 24 24'
                           >
-                            {job.company}
-                          </a>
-                        </Link>
-                        <svg
-                          className='ml-2 w-4 h-4 text-gray-400'
-                          fill='none'
-                          stroke='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                          />
-                        </svg>
+                            <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth={2}
+                              d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                            />
+                          </svg>
+                        </div>
                       </div>
 
-                    </div>
+                      {job.bulletPoints && (
+                        <ul className='text-gray-300 mb-4 leading-relaxed space-y-2'>
+                          {job.bulletPoints.map((point, pointIndex) => (
+                            <li key={pointIndex} className='flex items-start'>
+                              <span className='text-sky-400 mr-3 mt-1.5 text-xs'>
+                                •
+                              </span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                    {job.bulletPoints && (
-                      <ul className='text-gray-300 mb-4 leading-relaxed space-y-2'>
-                        {job.bulletPoints.map((point, pointIndex) => (
-                          <li key={pointIndex} className='flex items-start'>
-                            <span className='text-sky-400 mr-3 mt-1.5 text-xs'>
-                              •
-                            </span>
-                            <span>{point}</span>
-                          </li>
+                      <div className='flex flex-wrap gap-2'>
+                        {job.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'
+                          >
+                            {tech}
+                          </span>
                         ))}
-                      </ul>
-                    )}
-
-
-                    <div className='flex flex-wrap gap-2'>
-                      {job.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
+
           <div className='mt-12'>
             <a
               href='/resume.pdf'

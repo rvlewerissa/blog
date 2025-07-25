@@ -5,6 +5,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
+  { name: 'Home', href: '/' },
   { name: 'Work', href: '/#work' },
   { name: 'Projects', href: '/#projects' },
   { name: 'Contact me', href: '/#contact-me' },
@@ -26,7 +27,7 @@ export default function Navigation() {
                 </a>
               </Link>
               <div className='-mr-2 flex items-center lg:hidden'>
-                <Popover.Button className='bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+                <Popover.Button className='bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-200 hover:text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500'>
                   <span className='sr-only'>Open main menu</span>
                   <MenuIcon className='h-6 w-6' aria-hidden='true' />
                 </Popover.Button>
@@ -65,15 +66,15 @@ function MobileNavigation() {
         focus
         className='absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden'
       >
-        <div className='rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden'>
+        <div className='rounded-lg shadow-md bg-gray-900 ring-1 ring-gray-800 ring-opacity-50 overflow-hidden'>
           <div className='px-5 pt-4 flex items-center justify-between'>
             <div>
-              <span className='tracking-wider uppercase font-bold text-sm lg:text-lg'>
+              <span className='tracking-wider uppercase font-bold text-sm lg:text-lg text-white'>
                 Vitto Lewerissa
               </span>
             </div>
             <div className='-mr-2'>
-              <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+              <Popover.Button className='bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500'>
                 <span className='sr-only'>Close menu</span>
                 <XIcon className='h-6 w-6' aria-hidden='true' />
               </Popover.Button>
@@ -83,7 +84,7 @@ function MobileNavigation() {
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} passHref>
                 <span
-                  className='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 cursor-pointer'
+                  className='block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 cursor-pointer'
                   onClick={() => {
                     // TODO: need to close drawer when we click a link
                   }}
