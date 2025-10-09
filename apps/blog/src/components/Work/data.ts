@@ -20,6 +20,8 @@ export type ProjectWithImage = {
 
 export type ProjectWithoutImage = Omit<ProjectWithImage, 'image'>;
 
+export const CHIProjects: Array<ProjectWithImage> = [];
+
 export const GDISProjects: Array<ProjectWithImage> = [
   {
     name: 'ProLogs',

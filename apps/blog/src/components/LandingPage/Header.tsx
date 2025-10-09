@@ -56,18 +56,6 @@ export default function Header() {
                 className='absolute left-0.5 top-0.5 md:left-1 md:top-1 lg:left-1.5 lg:top-1.5 bg-blue-200 mix-blend-multiply rounded-full'
                 style={{ width: '97%', height: '97%' }}
               />
-              {/* Open to Work Badge */}
-              <div className='absolute -bottom-1 left-1/2 transform -translate-x-1/2 sm:-bottom-2 lg:-bottom-3'>
-                <div className='relative'>
-                  <div className='absolute inset-0 bg-emerald-700 rounded-full blur-sm opacity-75'></div>
-                  <div className='relative bg-emerald-700 text-white text-[8px] sm:text-[10px] lg:text-sm font-bold px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5 rounded-full shadow-lg'>
-                    <div className='flex items-center gap-0.5 sm:gap-1 lg:gap-1.5'>
-                      <div className='w-0.5 h-0.5 sm:w-1 sm:h-1 lg:w-1.5 lg:h-1.5 bg-white/70 rounded-full animate-pulse'></div>
-                      <span>Open to Work</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </main>

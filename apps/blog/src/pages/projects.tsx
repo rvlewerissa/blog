@@ -2,6 +2,7 @@ import {
   KodefoxProjectsWithoutImage,
   KodefoxProjects,
   GDISProjects,
+  CHIProjects,
   OtherProjectsWithoutImage,
 } from '../components/Work/data';
 
@@ -17,6 +18,14 @@ type TableProject = {
 export default function Projects() {
   // Transform work data into table format
   const allProjects: TableProject[] = [
+    ...CHIProjects.map((project) => ({
+      year: project.date.dateFrom.split(' ')[1] || project.date.dateFrom,
+      name: project.name,
+      madeAt: 'CHI',
+      builtWith: project.technologyUsed,
+      link: project.href ? extractDomain(project.href) : undefined,
+      href: project.href || undefined,
+    })),
     ...GDISProjects.map((project) => ({
       year: project.date.dateFrom.split(' ')[1] || project.date.dateFrom,
       name: project.name,

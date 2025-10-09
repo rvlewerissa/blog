@@ -2,6 +2,17 @@ import Link from 'next/link';
 
 const workExperience = [
   {
+    period: 'SEP 2025 — PRESENT',
+    title: 'Senior Front End Engineer',
+    company: 'CHI',
+    href: '',
+    logo: '/chi-logo.png',
+    bulletPoints: [
+      'Responsible for maintaining multiple applications: CHI App, CHI POS, CHI Backstage, and CHI PWA.',
+    ],
+    technologies: ['React Native', 'React', 'TypeScript'],
+  },
+  {
     period: 'OCT 2022 — APR 2025',
     title: 'Senior Front End Engineer',
     company: 'TipTip',
@@ -102,13 +113,15 @@ export default function RecentWork() {
                             ? 'bg-transparent p-0'
                             : job.company === 'KodeFox'
                               ? 'bg-white p-1'
-                              : 'bg-white p-2'
+                              : job.company === 'CHI'
+                                ? 'bg-black p-2.5'
+                                : 'bg-white p-2'
                         }`}
                       >
                         <img
                           src={job.logo}
                           alt={`${job.company} logo`}
-                          className={`w-full h-full ${job.company === 'TipTip' || job.company === 'Phantom Network' ? 'object-cover rounded-lg' : 'object-contain'}`}
+                          className={`w-full h-full ${job.company === 'TipTip' || job.company === 'Phantom Network' || job.company === 'CHI' ? 'object-cover rounded-lg' : 'object-contain'}`}
                           onError={(e) => {
                             // Fallback if logo doesn't exist
                             const target = e.currentTarget;
