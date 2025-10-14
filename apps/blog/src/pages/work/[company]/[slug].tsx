@@ -3,14 +3,18 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ClockIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import {
   getAllCompanies,
   getArticleSlugs,
   getArticleBySlug,
   Company,
 } from '../../../utils/workContent';
-import Sandpack from '../../../components/Sandpack';
 import CodeHighlighter from '../../../components/CodeHighlighter';
+
+const Sandpack = dynamic(() => import('../../../components/Sandpack'), {
+  ssr: false,
+});
 
 type Props = {
   company: Company;
