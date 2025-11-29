@@ -31,7 +31,7 @@ export default function Header() {
               <div className='inline-flex items-center mt-3 md:mt-4 pl-3 pr-4 py-2 bg-gray-700/30 backdrop-blur-sm rounded-full border border-gray-600/30 slide-in-bottom-2'>
                 <span className='mr-2 text-lg'>📍</span>
                 <span className='text-gray-200 text-sm md:text-base font-medium'>
-                  Jakarta, Indonesia
+                  Bali, Indonesia
                 </span>
               </div>
             </div>
