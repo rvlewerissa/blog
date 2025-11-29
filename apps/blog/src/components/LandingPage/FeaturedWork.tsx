@@ -1,18 +1,22 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const workExperience = [
   {
+    id: 'chi',
     period: 'SEP 2025 — PRESENT',
     title: 'Senior Front End Engineer',
     company: 'CHI',
-    href: '',
+    href: 'https://chi.app/',
     logo: '/chi-logo.png',
     bulletPoints: [
-      'Responsible for maintaining multiple applications: CHI App, CHI POS, CHI Backstage, and CHI PWA.',
+      'Orchestrated a major React Native upgrade (0.64 → 0.76.9), resolving 12+ versions of breaking changes across iOS and Android.',
+      'Reduced technical debt by 40% by removing 20+ deprecated packages, purging dead code, and resolving 500+ lint violations.',
     ],
     technologies: ['React Native', 'React', 'TypeScript'],
   },
   {
+    id: 'tiptip',
     period: 'OCT 2022 — APR 2025',
     title: 'Senior Front End Engineer',
     company: 'TipTip',
@@ -26,6 +30,7 @@ const workExperience = [
     technologies: ['Next.js', 'TypeScript', 'Zustand', 'Retool', 'Jest'],
   },
   {
+    id: 'phantom-network',
     period: 'APR 2022 — OCT 2022',
     title: 'Senior Front End Engineer',
     company: 'Phantom Network',
@@ -39,6 +44,7 @@ const workExperience = [
     technologies: ['Next.js', 'React.js', 'TypeScript', 'Jest'],
   },
   {
+    id: 'gdis',
     period: 'DEC 2019 — APR 2022',
     title: 'Front End Engineer',
     company: 'GDIS',
@@ -52,6 +58,7 @@ const workExperience = [
     technologies: ['React.js', 'TypeScript', 'GraphQL', 'Redux', 'Jest'],
   },
   {
+    id: 'kodefox',
     period: 'OCT 2016 — NOV 2019',
     title: 'Front End Engineer',
     company: 'KodeFox',
@@ -78,11 +85,13 @@ const workExperience = [
 ];
 
 export default function RecentWork() {
+  const router = useRouter();
+
   return (
     <div id='work' className='py-8 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
       <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
         <div>
-          <h2 className='text-2xl tracking-tight font-extrabold text-white sm:text-3xl mb-8'>
+          <h2 className='text-2xl tracking-tight font-extrabold font-display text-white sm:text-3xl mb-8'>
             Work Experience
           </h2>
 
@@ -92,9 +101,7 @@ export default function RecentWork() {
                 <div
                   key={job.company}
                   className='group relative p-6 rounded-lg transition-all duration-300 hover:bg-gray-700/20 hover:shadow-md cursor-pointer'
-                  onClick={() =>
-                    window.open(job.href, '_blank', 'noopener,noreferrer')
-                  }
+                  onClick={() => router.push(`/work/${job.id}`)}
                 >
                   {/* Vertical line segment with margin below company logo - hidden on hover */}
                   <div className='absolute left-6 lg:left-12 top-32 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 to-gray-600 opacity-50 group-hover:opacity-0 transition-opacity duration-300'></div>
@@ -112,16 +119,22 @@ export default function RecentWork() {
                           job.company === 'Phantom Network'
                             ? 'bg-transparent p-0'
                             : job.company === 'KodeFox'
-                              ? 'bg-white p-1'
-                              : job.company === 'CHI'
-                                ? 'bg-black p-2.5'
-                                : 'bg-white p-2'
+                            ? 'bg-white p-1'
+                            : job.company === 'CHI'
+                            ? 'bg-black p-2.5'
+                            : 'bg-white p-2'
                         }`}
                       >
                         <img
                           src={job.logo}
                           alt={`${job.company} logo`}
-                          className={`w-full h-full ${job.company === 'TipTip' || job.company === 'Phantom Network' || job.company === 'CHI' ? 'object-cover rounded-lg' : 'object-contain'}`}
+                          className={`w-full h-full ${
+                            job.company === 'TipTip' ||
+                            job.company === 'Phantom Network' ||
+                            job.company === 'CHI'
+                              ? 'object-cover rounded-lg'
+                              : 'object-contain'
+                          }`}
                           onError={(e) => {
                             // Fallback if logo doesn't exist
                             const target = e.currentTarget;
@@ -144,7 +157,7 @@ export default function RecentWork() {
 
                     <div className='flex-1 pl-8 lg:pl-0'>
                       <div className='mb-4'>
-                        <h3 className='text-xl font-semibold text-white mb-1 group-hover:text-sky-400 transition-colors'>
+                        <h3 className='text-xl font-semibold font-display text-white mb-1 group-hover:text-sky-400 transition-colors'>
                           {job.title}
                         </h3>
                         <div className='flex items-center mb-2'>
@@ -153,6 +166,7 @@ export default function RecentWork() {
                               className='text-gray-300 hover:text-sky-400 group-hover:text-sky-400 transition-colors font-medium'
                               target='_blank'
                               rel='noopener noreferrer'
+                              onClick={(e) => e.stopPropagation()}
                             >
                               {job.company}
                             </a>
@@ -190,7 +204,7 @@ export default function RecentWork() {
                         {job.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className='px-3 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'
+                            className='px-2.5 py-1 text-xs font-medium font-mono bg-white/5 text-gray-300 rounded-md border border-white/5'
                           >
                             {tech}
                           </span>
@@ -208,7 +222,7 @@ export default function RecentWork() {
               href='/resume.pdf'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-flex items-center px-4 py-2 bg-sky-900/20 text-sky-300 rounded-lg border border-sky-800/30 hover:bg-sky-800/30 hover:border-sky-700/50 transition-all duration-300'
+              className='inline-flex items-center px-6 py-3 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 font-medium rounded-full border border-white/10 hover:border-white/20 group'
             >
               <svg
                 className='mr-2 w-4 h-4'

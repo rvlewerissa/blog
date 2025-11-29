@@ -3,10 +3,11 @@ import Navigation from '../../layout/Navigation';
 export default function Header() {
   return (
     <div className='relative overflow-hidden'>
-      <img
-        src='/cool-background.svg'
-        alt=''
-        className='absolute -top-24 lg:-top-0 lg:-right-80 h-full opacity-10'
+      <div
+        className='absolute inset-0 opacity-30 animate-float [mask-image:linear-gradient(to_bottom,black_20%,transparent)]'
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40h40M40 0v40' stroke='%230ea5e9' stroke-opacity='0.3' stroke-width='1'/%3E%3C/svg%3E")`,
+        }}
       />
       <div className='relative pb-10 lg:pb-24'>
         <Navigation />
@@ -16,46 +17,39 @@ export default function Header() {
               <h1 className='text-4xl lg:text-6xl tracking-tight font-black text-white'>
                 <span className='block leading-snug slide-in-bottom'>
                   <span className='wave mr-2'>👋🏼 </span> Hi, I&apos;m{' '}
-                  <span>Vitto</span>.
+                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300'>
+                    Vitto
+                  </span>
+                  .
                 </span>
               </h1>
-              <h2 className='block leading-snug text-white font-bold text-lg sm:text-xl lg:text-2xl mt-3 md:mt-2 slide-in-bottom slide-in-bottom-2'>
-                I’m a Front-End Engineer with 8+ years of experience based in
-                Indonesia.
+              <h2 className='block leading-snug text-white font-bold font-display text-lg sm:text-xl lg:text-2xl mt-3 md:mt-2 slide-in-bottom slide-in-bottom-2'>
+                Senior Software Engineer crafting high-performance web
+                experiences.
               </h2>
               <p className='text-gray-200 mt-3 md:mt-5 text-md font-light md:text-xl slide-in-bottom-2'>
-                I have extensive experience working in agile environments,
-                developing scalable applications with technologies including
-                React.js, TypeScript, GraphQL, and Node.js.
+                Specializing in scalable applications with React, TypeScript,
+                and the modern web ecosystem. Based in Indonesia, delivering
+                world-class solutions for 8+ years.
               </p>
-              <div className='inline-flex items-center mt-3 md:mt-4 pl-3 pr-4 py-2 bg-gray-700/30 backdrop-blur-sm rounded-full border border-gray-600/30 slide-in-bottom-2'>
-                <span className='mr-2 text-lg'>📍</span>
-                <span className='text-gray-200 text-sm md:text-base font-medium'>
-                  Bali, Indonesia
-                </span>
+              <div className='flex flex-wrap items-center gap-4 mt-6 md:mt-8 slide-in-bottom-2'>
+                <div className='inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10'>
+                  <span className='mr-2 text-lg'>📍</span>
+                  <span className='text-gray-200 text-sm md:text-base font-medium'>
+                    Bali, Indonesia
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div
-              className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-96 lg:h-96 relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-12 md:ml-12 md:mt-0 shrink-0 puff-in-center bg-gradient-to-r from-amber-500 to-orange-600 rounded-full'
-              style={{
-                boxShadow:
-                  'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
-              }}
-            >
-              <img
-                src='/me.jpeg'
-                alt=''
-                className='absolute object-cover rounded-full left-0.5 top-0.5 md:left-1 md:top-1 lg:left-1.5 lg:top-1.5'
-                style={{
-                  width: '97%',
-                  height: '97%',
-                }}
-              />
-              <div
-                className='absolute left-0.5 top-0.5 md:left-1 md:top-1 lg:left-1.5 lg:top-1.5 bg-blue-200 mix-blend-multiply rounded-full'
-                style={{ width: '97%', height: '97%' }}
-              />
+            <div className='relative mt-6 mb-8 ml-4 sm:mr-8 self-start lg:mt-12 md:ml-12 md:mt-0 shrink-0 puff-in-center'>
+              <div className='w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-96 lg:h-96 relative rounded-full border-2 border-sky-500/20 shadow-[0_0_40px_-10px_rgba(14,165,233,0.3)] overflow-hidden'>
+                <img
+                  src='/profile-picture.jpg'
+                  alt='Vitto Lewerissa'
+                  className='w-full h-full object-cover'
+                />
+              </div>
             </div>
           </div>
         </main>

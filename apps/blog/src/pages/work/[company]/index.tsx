@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
   getAllCompanies,
   getArticlesByCompany,
@@ -46,27 +46,35 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 };
 
 export default function CompanyWork({ company, articles }: Props) {
+  const router = useRouter();
   return (
-    <div className='pt-0 pb-4 px-4 sm:px-6 lg:pt-0 lg:pb-20 lg:px-8'>
+    <div className='bg-gray-900 min-h-screen pt-0 pb-4 px-4 sm:px-6 lg:pt-0 lg:pb-20 lg:px-8'>
       <div className='max-w-lg mx-auto lg:max-w-5xl py-12'>
-        <Link href='/work'>
-          <a className='inline-flex items-center text-sky-500 hover:text-sky-400 mb-6'>
-            <svg
-              className='w-4 h-4 mr-2'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M15 19l-7-7 7-7'
-              />
-            </svg>
-            Back to all companies
-          </a>
-        </Link>
+        <button
+          onClick={() => {
+            if (window.history.state && window.history.state.idx > 0) {
+              router.back();
+            } else {
+              router.push('/');
+            }
+          }}
+          className='inline-flex items-center px-3 py-1.5 text-sm bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 rounded-full transition-all border border-white/5 hover:border-white/20 mb-8 group'
+        >
+          <svg
+            className='w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M15 19l-7-7 7-7'
+            />
+          </svg>
+          Back
+        </button>
 
         <div className='flex items-start gap-6 mb-8'>
           {company.logo && (
@@ -75,10 +83,10 @@ export default function CompanyWork({ company, articles }: Props) {
                 company.name === 'TipTip' || company.name === 'Phantom Network'
                   ? 'bg-transparent p-0'
                   : company.name === 'KodeFox'
-                    ? 'bg-white p-1'
-                    : company.name === 'CHI'
-                      ? 'bg-black p-3'
-                      : 'bg-white p-3'
+                  ? 'bg-white p-1'
+                  : company.name === 'CHI'
+                  ? 'bg-black p-3'
+                  : 'bg-white p-3'
               }`}
             >
               <img
@@ -109,9 +117,9 @@ export default function CompanyWork({ company, articles }: Props) {
       </div>
 
       <div className='relative max-w-lg mx-auto divide-y-2 divide-gray-800 lg:max-w-5xl'>
-        <div>
+        <div className='pb-4'>
           <h2 className='text-2xl tracking-tight font-extrabold text-white sm:text-3xl'>
-            Articles
+            Case Studies
           </h2>
         </div>
 
@@ -165,8 +173,8 @@ export default function CompanyWork({ company, articles }: Props) {
         ) : (
           <div className='pt-8'>
             <p className='text-gray-400 text-center py-12'>
-              No articles available yet for {company.displayName}. Check back
-              soon!
+              No case studies available yet for {company.displayName}. Check
+              back soon!
             </p>
           </div>
         )}

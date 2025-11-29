@@ -34,4 +34,12 @@ export const companyMetadata: Record<string, Omit<Company, 'id'>> = {
     description:
       'KodeFox is a software house specializing in web and mobile development. As Front End Engineer, I delivered 4 client apps (React.js and React Native), contributed to VisionUI (a no-code framework for Prudential Indonesia), and mentored developers through workshops at Traveloka and other organizations.',
   },
+  gdis: {
+    name: 'GDIS',
+    displayName: 'GDIS',
+    logo: '/gdis-logo.png',
+    period: 'DEC 2019 — APR 2022',
+    description:
+      'GDIS is an IT consulting company. As Front End Engineer, I led a team of 4 developers, revamped the core product using React & GraphQL (reducing load times by 60%), and eliminated 25% of legacy code.',
+  },
 };

@@ -59,74 +59,73 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div id='projects' className='py-8 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
+    <div id='projects' className='py-12 sm:pb-4 px-4 sm:px-8 lg:pt-0 lg:pb-20'>
       <div className='relative max-w-lg mx-auto lg:max-w-5xl'>
-        <div>
-          <h2 className='text-2xl tracking-tight font-extrabold text-white sm:text-3xl mb-8'>
+        <div className='mb-12'>
+          <h2 className='text-2xl tracking-tight font-extrabold font-display text-white sm:text-3xl mb-8'>
             Featured Projects
           </h2>
+          <p className='text-gray-400 text-lg max-w-2xl'>
+            A collection of projects I've worked on, ranging from web
+            applications to mobile apps.
+          </p>
+        </div>
 
-          <div className='grid gap-6 lg:grid-cols-2 xl:grid-cols-3'>
-            {projects.map((project, index) => (
-              <div
-                key={project.name}
-                className='group relative bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 transition-all duration-300 hover:bg-gray-800/70 hover:border-gray-600/50'
-              >
-                {/* Project Image */}
-                <div className='w-full h-48 bg-gray-600 rounded-lg mb-4 overflow-hidden'>
-                  <img
-                    src={project.image}
-                    alt={`${project.name} preview`}
-                    className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
-                    onError={(e) => {
-                      // Fallback if image doesn't exist
-                      const target = e.currentTarget;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) {
-                        fallback.style.display = 'flex';
-                      }
-                    }}
-                  />
-                  <div
-                    className='w-full h-full bg-gray-600 rounded flex items-center justify-center text-white text-sm font-medium'
-                    style={{ display: 'none' }}
-                  >
-                    {project.name}
-                  </div>
+        <div className='grid gap-8 lg:grid-cols-2 xl:grid-cols-3'>
+          {projects.map((project, index) => (
+            <div
+              key={project.name}
+              className='group relative flex flex-col bg-gray-900/40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-gray-800/60 transition-all duration-300 ring-1 ring-white/10 hover:ring-white/20'
+            >
+              {/* Project Image */}
+              <div className='relative w-full h-56 overflow-hidden bg-gray-800'>
+                <img
+                  src={project.image}
+                  alt={`${project.name} preview`}
+                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) {
+                      fallback.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div
+                  className='w-full h-full bg-gray-800 flex items-center justify-center text-white text-sm font-medium'
+                  style={{ display: 'none' }}
+                >
+                  {project.name}
                 </div>
 
-                {/* Project Info */}
-                <div className='flex-1'>
-                  <div className='flex items-center justify-between mb-2'>
-                    {project.status === 'active' || project.demo ? (
+                {/* Overlay with status */}
+                <div className='absolute top-3 right-3 flex gap-2'>
+                  {project.status === 'archived' && (
+                    <span className='px-2.5 py-1 text-xs font-medium bg-black/60 backdrop-blur-md text-gray-300 rounded-full border border-white/10'>
+                      Archived
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Project Info */}
+              <div className='flex-1 p-6 flex flex-col'>
+                <div className='flex items-center justify-between mb-3'>
+                  <h3 className='text-xl font-bold font-display text-white group-hover:text-sky-400 transition-colors'>
+                    {project.name}
+                  </h3>
+                  <div className='flex gap-2'>
+                    {project.demo && (
                       <a
                         href={project.demo}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='text-xl font-semibold text-white hover:text-sky-400 transition-colors cursor-pointer'
-                      >
-                        {project.name}
-                      </a>
-                    ) : (
-                      <h3 className='text-xl font-semibold text-white transition-colors'>
-                        {project.name}
-                      </h3>
-                    )}
-                    {project.status === 'archived' && (
-                      <span className='px-2 py-1 text-xs font-medium bg-gray-700/50 text-gray-300 rounded border border-gray-600/50'>
-                        Archived
-                      </span>
-                    )}
-                    {project.status === 'active' && (
-                      <a
-                        href={project.demo}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='inline-flex items-center px-2 py-1 text-xs font-medium bg-emerald-900/30 text-emerald-300 hover:bg-emerald-800/40 hover:text-emerald-200 rounded border border-emerald-800/40 transition-colors'
+                        className='p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all'
+                        title='Visit Website'
                       >
                         <svg
-                          className='w-3 h-3 mr-1'
+                          className='w-5 h-5'
                           fill='none'
                           stroke='currentColor'
                           viewBox='0 0 24 24'
@@ -135,113 +134,94 @@ export default function Projects() {
                             strokeLinecap='round'
                             strokeLinejoin='round'
                             strokeWidth={2}
-                            d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
+                            d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
                           />
                         </svg>
-                        Website
                       </a>
                     )}
-                  </div>
-
-                  <p className='text-gray-300 text-sm leading-relaxed mb-3'>
-                    {project.description}
-                  </p>
-
-                  <p className='text-orange-400 text-xs font-medium mb-4'>
-                    {project.company === 'Independent'
-                      ? 'Personal Project'
-                      : `Built at ${project.company || 'KodeFox'}`}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className='flex flex-wrap gap-2 mb-4'>
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className='px-2 py-1 text-xs font-medium bg-sky-900/20 text-sky-300 rounded-full border border-sky-800/30'
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Demo, Publication, and Design buttons at bottom */}
-                  <div className='flex gap-2 mt-2'>
                     {project.demoVideo && (
                       <a
                         href={project.demoVideo}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='inline-flex items-center px-2 py-1 text-xs font-medium bg-blue-900/30 text-blue-300 hover:bg-blue-800/40 hover:text-blue-200 rounded border border-blue-800/40 transition-colors'
+                        className='p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all'
+                        title='Watch Demo'
                       >
                         <svg
-                          className='w-3 h-3 mr-1'
+                          className='w-5 h-5'
                           fill='currentColor'
                           viewBox='0 0 24 24'
                         >
                           <path d='M8 5v14l11-7z' />
                         </svg>
-                        Demo
-                      </a>
-                    )}
-                    {project.publication && (
-                      <a
-                        href={project.publication}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='inline-flex items-center px-2 py-1 text-xs font-medium bg-purple-900/30 text-purple-300 hover:bg-purple-800/40 hover:text-purple-200 rounded border border-purple-800/40 transition-colors'
-                      >
-                        <svg
-                          className='w-3 h-3 mr-1'
-                          fill='none'
-                          stroke='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                          />
-                        </svg>
-                        Publication
-                      </a>
-                    )}
-                    {project.design && (
-                      <a
-                        href={project.design}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='inline-flex items-center px-2 py-1 text-xs font-medium bg-pink-900/30 text-pink-300 hover:bg-pink-800/40 hover:text-pink-200 rounded border border-pink-800/40 transition-colors'
-                      >
-                        <svg
-                          className='w-3 h-3 mr-1'
-                          fill='none'
-                          stroke='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'
-                          />
-                        </svg>
-                        Design
                       </a>
                     )}
                   </div>
                 </div>
+
+                <p className='text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3'>
+                  {project.description}
+                </p>
+
+                <div className='mt-auto'>
+                  <div className='flex flex-wrap gap-2 mb-4'>
+                    {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                      <span
+                        key={tech}
+                        className='px-2.5 py-1 text-xs font-medium font-mono bg-white/5 text-gray-300 rounded-md border border-white/5'
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className='px-2.5 py-1 text-xs font-medium bg-white/5 text-gray-400 rounded-md border border-white/5'>
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className='flex items-center justify-between pt-4 border-t border-white/5'>
+                    <span className='text-xs font-medium text-gray-500'>
+                      {project.company === 'Independent'
+                        ? 'Personal Project'
+                        : project.company || 'KodeFox'}
+                    </span>
+
+                    <div className='flex gap-3'>
+                      {project.publication && (
+                        <a
+                          href={project.publication}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='text-xs font-medium text-gray-400 hover:text-white transition-colors'
+                        >
+                          Read Article
+                        </a>
+                      )}
+                      {project.design && (
+                        <a
+                          href={project.design}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='text-xs font-medium text-gray-400 hover:text-white transition-colors'
+                        >
+                          View Design
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-          
-          <div className='mt-12'>
-            <Link href='/projects'>
-              <span className='inline-flex items-center px-4 py-2 bg-sky-900/20 text-sky-300 hover:bg-sky-800/30 hover:text-sky-200 transition-all duration-300 font-medium rounded-lg border border-sky-800/30 hover:border-sky-700/50'>
+            </div>
+          ))}
+        </div>
+
+        <div className='mt-16 text-left'>
+          <Link href='/projects'>
+            <a className='inline-flex items-center px-6 py-3 bg-white/5 text-white hover:bg-white/10 transition-all duration-300 font-medium rounded-full border border-white/10 hover:border-white/20 group'>
               Explore All Projects
               <svg
-                className='ml-2 w-4 h-4'
+                className='ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -250,12 +230,11 @@ export default function Projects() {
                   strokeLinecap='round'
                   strokeLinejoin='round'
                   strokeWidth={2}
-                  d='M13 7l5 5m0 0l-5 5m5-5H6'
+                  d='M17 8l4 4m0 0l-4 4m4-4H3'
                 />
               </svg>
-              </span>
-            </Link>
-          </div>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

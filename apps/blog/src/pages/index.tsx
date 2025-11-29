@@ -8,7 +8,7 @@ import Footer from '../layout/Footer';
 
 const Home = () => {
   return (
-    <div className='bg-gray-800 min-h-screen overflow-hidden'>
+    <div className='bg-gray-900 min-h-screen overflow-hidden'>
       <Head />
       <Header />
       <FeaturedWork />
