@@ -66,7 +66,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className='text-gray-400 text-lg max-w-2xl'>
-            A collection of projects I've worked on, ranging from web
+            A collection of projects I&apos;ve worked on, ranging from web
             applications to mobile apps.
           </p>
         </div>
