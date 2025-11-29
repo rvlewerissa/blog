@@ -24,13 +24,13 @@ export default function Header() {
                 </span>
               </h1>
               <h2 className='block leading-snug text-white font-bold font-display text-lg sm:text-xl lg:text-2xl mt-3 md:mt-2 slide-in-bottom slide-in-bottom-2'>
-                Senior Software Engineer crafting high-performance web
-                experiences.
+                Senior Software Engineer. Crafting high-quality, scalable
+                applications.
               </h2>
               <p className='text-gray-200 mt-3 md:mt-5 text-md font-light md:text-xl slide-in-bottom-2'>
-                Specializing in scalable applications with React, TypeScript,
-                and the modern web ecosystem. Based in Indonesia, delivering
-                world-class solutions for 8+ years.
+                Specializing in React, TypeScript, and modern web technologies.
+                Based in Indonesia, delivering world-class solutions for 8+
+                years.
               </p>
               <div className='flex flex-wrap items-center gap-4 mt-6 md:mt-8 slide-in-bottom-2'>
                 <div className='inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10'>
