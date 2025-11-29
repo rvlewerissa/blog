@@ -169,17 +169,6 @@ export const KodefoxProjectsWithoutImage = [
 
 export const OtherProjectsWithoutImage = [
   {
-    name: 'Bootcampku',
-    href: 'https://bootcampku.com',
-    date: { dateFrom: 'Jan 2025', dateTo: 'Present' },
-    description: `An online learning platform focused on Frontend Engineering and Web Development. Features short, dense, and informative content with live coding experiences directly in the browser, covering React, Git, GraphQL, and modern web technologies for all skill levels.`,
-    technologyUsed: ['React', 'Next.js', 'TypeScript', 'TailwindCSS'],
-    responsibilities: [
-      'Single-handedly built the entire learning platform',
-      'Developed course management system and interactive coding challenges',
-    ],
-  },
-  {
     name: 'TipTip',
     href: 'tiptip.id',
     date: { dateFrom: 'Oct 2022', dateTo: 'Apr 2025' },

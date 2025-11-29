@@ -2,16 +2,6 @@ import Link from 'next/link';
 
 const projects = [
   {
-    name: 'Bootcampku',
-    description:
-      'An online learning platform focused on Frontend Engineering and Web Development. Features short, dense, and informative content with live coding experiences directly in the browser, covering technologies for all skill levels.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'TailwindCSS'],
-    demo: 'https://bootcampku.com',
-    image: '/bootcampku-logo.png',
-    status: 'active',
-    company: 'Independent',
-  },
-  {
     name: 'Marketwurks',
     description:
       'Marketwurks allows you to easily and affordably manage your market. Enhanced the platform with new features including drag & drop functionality for forms, new form types, labelling system, and maintained the application by fixing regressions and bugs.',
