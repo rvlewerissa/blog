@@ -100,7 +100,7 @@ export default function RecentWork() {
               {workExperience.map((job) => (
                 <div
                   key={job.company}
-                  className='group relative p-6 rounded-lg transition-all duration-300 border border-transparent hover:bg-gray-800/50 hover:border-sky-500/30 hover:shadow-lg hover:shadow-sky-500/10 cursor-pointer'
+                  className='group relative p-6 rounded-lg transition-all duration-300 border border-transparent hover:bg-gray-800/30 hover:border-white/10 hover:shadow-lg cursor-pointer'
                   onClick={() => router.push(`/work/${job.id}`)}
                 >
                   {/* Vertical line segment with margin below company logo - hidden on hover */}
