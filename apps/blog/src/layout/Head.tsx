@@ -15,6 +15,7 @@ export default function Head() {
       />
       <meta property='og:url' content='https://www.vittolewerissa.com' />
       <meta name='description' content={`Vitto Lewerissa's personal website`} />
+      <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
     </NextHead>
   );
 }
